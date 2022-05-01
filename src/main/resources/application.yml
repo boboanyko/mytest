@@ -3,19 +3,29 @@ server:
   servlet:
     context-path: /
 
-#logging:
-#  level:
-#    com.baomidou.mybatisplus.samples.quickstart: debug
+logging:
+  level:
+    com.baomidou.mybatisplus.samples.quickstart: debug
+    com.mytest.dao.mapper: debug
 
-#mybatis-plus:
-#  global-config:
-#    db-config:
-#      db-type: MYSQL
-#      capital-mode: false #开启大写命名
-#      column-like: true #开启 LIKE 查询
-#mybatis:
-#  mapper-locations: classpath:mappers/*.xml
-#  type-aliases-package: com.example.demo.pojo
+
+
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/mydb
+    username: postgres
+    password: 13qeadzc
+mybatis-plus:
+  global-config:
+    db-config:
+      db-type: MYSQL
+      capital-mode: false #开启大写命名
+      column-like: true #开启 LIKE 查询
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.example.demo.pojo
 #spring.data.elasticsearch.cluster-nodes=xxxx:9300,xxx:9301
 #spring.data.elasticsearch.cluster-name=b_cluster
 
