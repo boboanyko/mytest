@@ -16,10 +16,25 @@ public class KafkaTestController {
 
     @Autowired
     private KafkaSender kafkaSender;
+//
+//    @Autowired
+//    private KafkaProducer kafkaProducer;
 
+//
+/*    @GetMapping("/send/msg/{msg}")
+    public void sendMessage(@PathVariable("msg") String msg){
+        kafkaSender.send(msg);
+    }*/
 
     @GetMapping("/send/msg/{msg}")
     public void sendMessage(@PathVariable("msg") String msg){
-        kafkaSender.send(msg);
+        kafkaSender.sendStringMsg(msg);
     }
+//
+//
+//
+//    @GetMapping("/producer/msg/{msg}")
+//    public void producerMessage(@PathVariable("msg") String msg){
+//        kafkaProducer.send(msg);
+//    }
 }
