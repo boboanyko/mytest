@@ -1,4 +1,4 @@
-package com.mytest.model;
+package com.mytest.model.es;
 
 import java.io.Serializable;
 import java.util.Date;
