@@ -9,12 +9,12 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.io.Serializable;
 
-@Data
+/*@Data
 @Document(indexName = "person")
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Builder*/
 public class Person implements Serializable {
 
     @Id

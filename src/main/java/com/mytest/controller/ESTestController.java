@@ -11,7 +11,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/es")
 public class ESTestController {
-
+/*
     @Autowired
     private ESTestService esTestService;
 
@@ -78,5 +78,5 @@ public class ESTestController {
     public String esPut11(@PathVariable String userId) throws IOException {
         String update = esTestService.updateData(userId);
         return update;
-    }
+    }*/
 }

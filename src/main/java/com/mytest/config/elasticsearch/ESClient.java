@@ -26,7 +26,7 @@ import java.security.KeyStore;
 
 
 @Slf4j
-@Component
+//@Component
 public class ESClient {
 
     public RestHighLevelClient restHighLevelClient;

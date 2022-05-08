@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-@Component
+//@Component
 @Slf4j
 public class KafkaSender {
 
@@ -33,7 +33,7 @@ public class KafkaSender {
         kafkaTemplate.send("hello2",JSONObject.toJSONString(message));
     }*/
 
-
+/*
     @Autowired
     private KafkaTemplate<String,String> stringTemplate;
 
@@ -47,6 +47,6 @@ public class KafkaSender {
         log.info("send message -- {} --", JSONObject.toJSONString(message));
 //        stringTemplate.send(BizConstants.CAR_TYPE_TOPIC,JSONObject.toJSONString(message));
         stringTemplate.send(new ProducerRecord<>(BizConstants.CAR_TYPE_TOPIC,"car-type-key",JSONObject.toJSONString(message)));
-    }
+    }*/
 
 }

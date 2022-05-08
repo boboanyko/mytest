@@ -27,7 +27,7 @@ import org.springframework.kafka.support.Acknowledgment;
 import java.util.*;
 import java.util.regex.Pattern;
 
-@Configuration
+//@Configuration
 @Slf4j
 public class KafkaConfiguration {
 

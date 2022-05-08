@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-@Component
+//@Component
 @Slf4j
 public class KafkaReciver {
 
 
-    @KafkaListener(id = "carTypeListener",containerFactory= "kafkaListenerContainerFactory" ,topics = {BizConstants.CAR_TYPE_TOPIC})
+/*    @KafkaListener(id = "carTypeListener",containerFactory= "kafkaListenerContainerFactory" ,topics = {BizConstants.CAR_TYPE_TOPIC})
     public void listen(ConsumerRecord<?, ?> record, Acknowledgment acknowledgment) {
 
         log.info("KafkaReciver listen acknowledgment --> {}", acknowledgment);
@@ -28,6 +28,6 @@ public class KafkaReciver {
                     log.info("【+++++++++++++++++ message = {}】", message);
                 });
         acknowledgment.acknowledge();
-    }
+    }*/
 
 }

@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public interface ESTestService {
 
-    String syncUserInfoWithId(String req);
+/*    String syncUserInfoWithId(String req);
 
     String syncUserInfoByIds(String req);
 
@@ -22,5 +22,5 @@ public interface ESTestService {
 
     String createPerson(Person person);
 
-    String createIndex(String name) throws IOException;
+    String createIndex(String name) throws IOException;*/
 }

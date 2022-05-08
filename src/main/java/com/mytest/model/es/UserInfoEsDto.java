@@ -12,12 +12,12 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 /**
  * @author nandao 2020/9/27
  */
-@Data
+/*@Data
 @Document(indexName = "userinfo")
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Builder*/
 public class UserInfoEsDto implements Serializable {
  
 

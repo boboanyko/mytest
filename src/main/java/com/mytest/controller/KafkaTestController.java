@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class KafkaTestController {
 
-
+/*
     @Autowired
-    private KafkaSender kafkaSender;
+    private KafkaSender kafkaSender;*/
 //
 //    @Autowired
 //    private KafkaProducer kafkaProducer;
@@ -26,10 +26,10 @@ public class KafkaTestController {
         kafkaSender.send(msg);
     }*/
 
-    @GetMapping("/send/msg/{msg}")
+/*    @GetMapping("/send/msg/{msg}")
     public void sendMessage(@PathVariable("msg") String msg){
         kafkaSender.sendStringMsg(msg);
-    }
+    }*/
 //
 //
 //

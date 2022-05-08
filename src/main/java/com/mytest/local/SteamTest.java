@@ -8,7 +8,7 @@ import java.util.Optional;
 public class SteamTest {
 
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Person person = new Person();
         person.setAge(20);
         Optional.ofNullable(person).ifPresent(p -> testSteam(person, p));
@@ -21,5 +21,5 @@ public class SteamTest {
         person1.setAddress("上海");
         person2.setName("zhangsan");
 
-    }
+    }*/
 }

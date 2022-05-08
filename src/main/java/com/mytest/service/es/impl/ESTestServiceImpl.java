@@ -51,7 +51,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class ESTestServiceImpl implements ESTestService {
 
-    @Autowired
+    /*@Autowired
     private ESClient esClient;
 
 
@@ -196,7 +196,7 @@ public class ESTestServiceImpl implements ESTestService {
         //分页
 //        nativeSearchQueryBuilder.withPageable(pageable);
         //过滤
-        /*if (brandId != null || productCategoryId != null) {
+        *//*if (brandId != null || productCategoryId != null) {
             BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
             if (brandId != null) {
                 boolQueryBuilder.must(QueryBuilders.termQuery("brandId", brandId));
@@ -205,7 +205,7 @@ public class ESTestServiceImpl implements ESTestService {
                 boolQueryBuilder.must(QueryBuilders.termQuery("productCategoryId", productCategoryId));
             }
             nativeSearchQueryBuilder.withFilter(boolQueryBuilder);
-        }*/
+        }*//*
         //搜索
         if (StringUtils.isEmpty(keyword)) {
             nativeSearchQueryBuilder.withQuery(QueryBuilders.matchAllQuery());
@@ -226,7 +226,7 @@ public class ESTestServiceImpl implements ESTestService {
             nativeSearchQueryBuilder.withQuery(functionScoreQueryBuilder);
         }
         //排序
-        /*if(sort==1){
+        *//*if(sort==1){
             //按新品从新到旧
             nativeSearchQueryBuilder.withSort(SortBuilders.fieldSort("id").order(SortOrder.DESC));
         }else if(sort==2){
@@ -241,7 +241,7 @@ public class ESTestServiceImpl implements ESTestService {
         }else{
             //按相关度
             nativeSearchQueryBuilder.withSort(SortBuilders.scoreSort().order(SortOrder.DESC));
-        }*/
+        }*//*
         nativeSearchQueryBuilder.withSort(SortBuilders.scoreSort().order(SortOrder.DESC));
         NativeSearchQuery searchQuery = nativeSearchQueryBuilder.build();
         log.info("DSL:{}", searchQuery.getQuery().toString());
@@ -282,13 +282,13 @@ public class ESTestServiceImpl implements ESTestService {
             log.error("查询更新索引:[{}]操作出现异常:{}", "indexName", e);
         }
 
- /*       Map<String, Object> jsonMap = new HashMap<>();
+ *//*       Map<String, Object> jsonMap = new HashMap<>();
         jsonMap.put("name", "黑骑五户");
         UpdateByQueryRequest request = new UpdateByQueryRequest("userinfo");
         request.setIndicesOptions(IndicesOptions.STRICT_EXPAND_OPEN);
         request.setQuery(new TermQueryBuilder("userId",userId));
 
-        esClient.restHighLevelClient.updateByQuery(request,RequestOptions.DEFAULT);*/
+        esClient.restHighLevelClient.updateByQuery(request,RequestOptions.DEFAULT);*//*
 
 
         return null;
@@ -361,5 +361,5 @@ public class ESTestServiceImpl implements ESTestService {
 
 
         return null;
-    }
+    }*/
 }
