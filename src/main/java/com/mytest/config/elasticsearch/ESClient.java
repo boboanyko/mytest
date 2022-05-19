@@ -111,13 +111,9 @@ public class ESClient {
         credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(esConfig.getUsername(), esConfig.getPassword()));
         log.info("连接单机ES: {}:{}", esConfig.getNode1Ip(), esConfig.getNode1Port());
         RestClientBuilder rclientBuilder = RestClient.builder(new HttpHost(esConfig.getNode1Ip(), esConfig.getNode1Port(), esConfig.getNode1Scheme()))
-                .setHttpClientConfigCallback(new RestClientBuilder.HttpClientConfigCallback() {
-                    @Override
-                    public HttpAsyncClientBuilder customizeHttpClient(HttpAsyncClientBuilder httpClientBuilder) {
-                        return httpClientBuilder.setSSLHostnameVerifier(new NoopHostnameVerifier())
-                                .setDefaultCredentialsProvider(credentialsProvider);
-                    }
-                });
+                .setHttpClientConfigCallback(httpClientBuilder ->
+                        httpClientBuilder.setSSLHostnameVerifier(new NoopHostnameVerifier())
+                        .setDefaultCredentialsProvider(credentialsProvider));
         restHighLevelClient = new RestHighLevelClient(rclientBuilder);
         return restHighLevelClient;
     }

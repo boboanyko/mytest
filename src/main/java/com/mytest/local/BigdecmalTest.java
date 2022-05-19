@@ -1,6 +1,7 @@
 package com.mytest.local;
 
 import java.math.BigDecimal;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class BigdecmalTest {
 
@@ -12,5 +13,10 @@ public class BigdecmalTest {
         usedM = usedM.setScale(2, BigDecimal.ROUND_HALF_UP);
 
         System.out.println(String.valueOf(usedM));
+
+        AtomicInteger test1 = new AtomicInteger(0);
+        System.out.println(test1.addAndGet(1));
+        System.out.println(test1.addAndGet(1));
+
     }
 }
