@@ -1,7 +1,6 @@
 package com.mytest.local;
 
 import com.alibaba.fastjson.JSONObject;
-import com.mytest.model.es.Person;
 
 import java.util.Optional;
 

@@ -47,7 +47,13 @@ spring:
 #      enable:
 #        idempotence: true
 
-
+  cache:
+    jcache:
+      provider: io.github.bucket4j.redis.redisson.cas.RedissonBasedProxyManager
+    cache-names:
+      - buckets
+    caffeine:
+      spec: maximumSize=1000000,expireAfterAccess=3600s
 
 
 mybatis-plus:
@@ -84,4 +90,25 @@ elasticsearch:
 #elasticsearch.node3Port=9200
 #elasticsearch.node3Scheme=http
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  security:
+    enabled: false
+
+bucket4j:
+  enabled: true
+  filters:
+    - cache-name: buckets
+      url: .*
+      hide-http-response-headers: true
+      rate-limits:
+        - bandwidths:
+            - capacity: 5
+              time: 1
+              unit: minutes
+              fixed-refill-interval: 1
+              fixed-refill-interval-unit: minutes
 
